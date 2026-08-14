@@ -168,38 +168,40 @@ body::before {
   border-color: var(--color-accent);
 }
 
-/* ── Social Links ────────────────────────────────────────── */
+/* ── Social Icon Buttons (Squircle) ───────────────────────── */
 
-.social-link {
+.social-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--color-ink) 10%, transparent);
-  font-size: 0.875rem;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 1rem;
+  background: #ffffff;
+  border: 1px solid rgba(28, 25, 21, 0.09);
   color: var(--color-ink);
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-  background: transparent;
+  box-shadow: 0 1px 3px rgba(28, 25, 21, 0.04), 0 1px 2px rgba(28, 25, 21, 0.02);
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.social-link:hover {
+.social-btn:hover {
+  transform: translateY(-3px);
   border-color: var(--color-accent);
-  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(200, 168, 130, 0.15);
+  box-shadow: 0 8px 20px rgba(28, 25, 21, 0.07), 0 2px 6px rgba(28, 25, 21, 0.04);
+  color: var(--color-ink);
 }
 
-.social-link svg {
-  width: 16px;
-  height: 16px;
-  opacity: 0.65;
-  transition: opacity 0.3s ease;
+.social-btn svg {
+  width: 20px;
+  height: 20px;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.social-link:hover svg {
+.social-btn:hover svg {
   opacity: 1;
+  transform: scale(1.08);
 }
 
 /* ── Timeline ────────────────────────────────────────────── */
@@ -240,37 +242,26 @@ body::before {
 
 /* ── Skill Tags ──────────────────────────────────────────── */
 
-.skill-tag {
+.skill-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.375rem 0.875rem;
-  border-radius: 6px;
+  padding: 0.4rem 0.9rem;
+  border-radius: 0.5rem;
   font-size: 0.8125rem;
-  letter-spacing: 0.01em;
-  color: var(--color-mute);
+  font-weight: 450;
+  color: var(--color-ink);
   background: var(--color-wash);
-  border: 1px solid color-mix(in srgb, var(--color-ink) 5%, transparent);
-  transition: all 0.25s ease;
+  border: 1px solid rgba(28, 25, 21, 0.05);
+  box-shadow: 0 1px 2px rgba(28, 25, 21, 0.02);
+  transition: all 0.2s ease;
   white-space: nowrap;
 }
 
-.skill-tag:hover {
-  color: var(--color-ink);
+.skill-pill:hover {
   border-color: var(--color-accent);
-  background: color-mix(in srgb, var(--color-accent) 8%, var(--color-wash));
-}
-
-.skill-icon {
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
-  opacity: 0.55;
-  transition: opacity 0.25s ease;
-}
-
-.skill-tag:hover .skill-icon {
-  opacity: 0.85;
+  background: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(28, 25, 21, 0.05);
 }
 
 /* ── Avatar ──────────────────────────────────────────────── */

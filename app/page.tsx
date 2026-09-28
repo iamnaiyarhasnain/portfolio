@@ -65,6 +65,14 @@ const socials = [
 
 const projects = [
   {
+    title: "PawBridge — Multimodal Edge-AI Companion",
+    description:
+      "Collaborative proof-of-concept integrating IoT edge sensors (accelerometer & ultrasonic triggers) with a multi-agent Claude AI reasoning pipeline to classify canine behavioral cues without overclaiming. Features real-time edge triggers, audio/visual analysis, and owner-calibrated confidence scoring.",
+    tags: ["Python", "Claude API", "Multi-Agent AI", "Edge IoT", "SQLite"],
+    href: "https://github.com/iamnaiyarhasnain/paw_bridge_poc",
+    badge: "Team PoC",
+  },
+  {
     title: "This Portfolio",
     description:
       "Handcrafted with Next.js. Warm paper textures, ink-wash borders, and scroll-driven reveals. No templates.",
@@ -147,7 +155,7 @@ const skillCategories = [
   },
   {
     category: "CORE & AI",
-    skills: ["Artificial Intelligence", "AI / ML", "Data Structures & Algorithms (DSA)"],
+    skills: ["Artificial Intelligence", "AI / ML", "Multi-Agent Systems", "Data Structures & Algorithms (DSA)"],
   },
 ];
 
@@ -247,30 +255,63 @@ export default function Home() {
         <section ref={addRevealRef} className="reveal mt-20">
           <SectionHeading>Projects</SectionHeading>
           <div className="mt-8 grid gap-4">
-            {projects.map((item, i) => (
-              <div
-                key={item.title}
-                className="ink-card"
-                style={{ transitionDelay: `${i * 80}ms` }}
-              >
-                <p className="text-[15px] font-medium text-ink">
-                  {item.title}
-                </p>
-                <p className="mt-2 text-[14px] leading-relaxed text-mute">
-                  {item.description}
-                </p>
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  {item.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded bg-ink/[0.04] px-2 py-0.5 font-mono text-[11px] text-mute"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+            {projects.map((item, i) => {
+              const cardContent = (
+                <>
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <p className="text-[15px] font-medium text-ink">
+                        {item.title}
+                      </p>
+                      {"badge" in item && item.badge && (
+                        <span className="rounded-full border border-ink/10 bg-wash/80 px-2 py-0.5 text-[10px] font-mono text-mute">
+                          {item.badge}
+                        </span>
+                      )}
+                    </div>
+                    {"href" in item && item.href && (
+                      <span className="arrow text-sm text-mute/60 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent">
+                        ↗
+                      </span>
+                    )}
+                  </div>
+                  <p className="mt-2 text-[14px] leading-relaxed text-mute">
+                    {item.description}
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {item.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded bg-ink/[0.04] px-2 py-0.5 font-mono text-[11px] text-mute"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </>
+              );
+
+              return "href" in item && item.href ? (
+                <a
+                  key={item.title}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ink-card group block text-inherit no-underline"
+                  style={{ transitionDelay: `${i * 80}ms` }}
+                >
+                  {cardContent}
+                </a>
+              ) : (
+                <div
+                  key={item.title}
+                  className="ink-card"
+                  style={{ transitionDelay: `${i * 80}ms` }}
+                >
+                  {cardContent}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 

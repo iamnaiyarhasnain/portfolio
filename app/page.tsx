@@ -72,24 +72,6 @@ const projects = [
     href: "https://github.com/iamnaiyarhasnain/paw_bridge_poc",
     badge: "Team PoC",
   },
-  {
-    title: "This Portfolio",
-    description:
-      "Handcrafted with Next.js. Warm paper textures, ink-wash borders, and scroll-driven reveals. No templates.",
-    tags: ["Next.js", "CSS", "TypeScript"],
-  },
-  {
-    title: "Java & Spring APIs",
-    description:
-      "First real backend work — REST APIs, authentication flows, and database layers. Learning how systems fit together.",
-    tags: ["Java", "Spring Boot", "REST"],
-  },
-  {
-    title: "The Web",
-    description:
-      "HTML, CSS, forms, layouts — the boring parts that make everything else possible. Obsessing over the details.",
-    tags: ["HTML", "CSS", "JavaScript"],
-  },
 ];
 
 const education = [

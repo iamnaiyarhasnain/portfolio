@@ -8,7 +8,7 @@ import Image from "next/image";
 const socials = [
   {
     href: "https://x.com/iammdmasroor",
-    label: "X",
+    label: "X (Twitter)",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -63,14 +63,38 @@ const socials = [
   },
 ];
 
-const projects = [
+interface Project {
+  title: string;
+  badge?: string;
+  description: string;
+  image?: {
+    src: string;
+    alt: string;
+    caption?: string;
+  };
+  highlights?: string[];
+  tags: string[];
+  href?: string;
+}
+
+const projects: Project[] = [
   {
     title: "PawBridge — Multimodal Edge-AI Companion",
+    badge: "Featured Team PoC",
     description:
-      "Collaborative proof-of-concept integrating IoT edge sensors (accelerometer & ultrasonic triggers) with a multi-agent Claude AI reasoning pipeline to classify canine behavioral cues without overclaiming. Features real-time edge triggers, audio/visual analysis, and owner-calibrated confidence scoring.",
-    tags: ["Python", "Claude API", "Multi-Agent AI", "Edge IoT", "SQLite"],
+      "A collaborative multimodal edge-AI system designed to bridge IoT sensor telemetry and multi-agent AI reasoning. Real-time edge triggers (accelerometer & ultrasonic sensors) capture physical and behavioral cues, processing them through a multi-agent Claude AI pipeline to classify canine states without overclaiming, backed by owner-calibrated confidence scoring.",
+    image: {
+      src: "/pawbridge-team.jpg",
+      alt: "PawBridge Development & Collaboration Team",
+      caption: "PawBridge development & hackathon collaboration team",
+    },
+    highlights: [
+      "Hardware-triggered Edge IoT telemetry pipeline with local SQLite state caching",
+      "Multi-Agent Claude AI reasoning pipeline for contextual canine behavior classification",
+      "Evidence-grounded confidence metrics preventing hallucinations & overclaiming",
+    ],
+    tags: ["Python", "Claude API", "Multi-Agent AI", "Edge IoT", "SQLite", "FastAPI"],
     href: "https://github.com/iamnaiyarhasnain/paw_bridge_poc",
-    badge: "Team PoC",
   },
 ];
 
@@ -137,7 +161,7 @@ const skillCategories = [
   },
   {
     category: "CORE & AI",
-    skills: ["Artificial Intelligence", "AI / ML", "Multi-Agent Systems", "Data Structures & Algorithms (DSA)"],
+    skills: ["Artificial Intelligence", "AI / ML", "Data Structures & Algorithms (DSA)"],
   },
 ];
 
@@ -186,7 +210,8 @@ export default function Home() {
               alt="Naiyar Hasnain"
               width={112}
               height={112}
-              preload
+              priority
+              unoptimized
               className="rounded-full object-cover"
               style={{ width: 112, height: 112 }}
             />
@@ -233,67 +258,104 @@ export default function Home() {
           </p>
         </section>
 
-        {/* ── Projects ──────────────────────────────────── */}
+        {/* ── Featured Projects ─────────────────────────── */}
         <section ref={addRevealRef} className="reveal mt-20">
-          <SectionHeading>Projects</SectionHeading>
-          <div className="mt-8 grid gap-4">
-            {projects.map((item, i) => {
-              const cardContent = (
-                <>
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <p className="text-[15px] font-medium text-ink">
-                        {item.title}
-                      </p>
-                      {"badge" in item && item.badge && (
-                        <span className="rounded-full border border-ink/10 bg-wash/80 px-2 py-0.5 text-[10px] font-mono text-mute">
-                          {item.badge}
-                        </span>
-                      )}
-                    </div>
-                    {"href" in item && item.href && (
-                      <span className="arrow text-sm text-mute/60 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent">
-                        ↗
+          <SectionHeading>Featured Project</SectionHeading>
+          <div className="mt-8 grid gap-6">
+            {projects.map((item, i) => (
+              <div
+                key={item.title}
+                className="ink-card group"
+                style={{ transitionDelay: `${i * 80}ms` }}
+              >
+                {/* Header with Title & Badge */}
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex flex-wrap items-center gap-2.5">
+                    <h3 className="text-[17px] font-medium text-ink">
+                      {item.title}
+                    </h3>
+                    {item.badge && (
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/40 bg-accent/10 px-2.5 py-0.5 text-[10px] font-medium text-ink">
+                        <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                        {item.badge}
                       </span>
                     )}
                   </div>
-                  <p className="mt-2 text-[14px] leading-relaxed text-mute">
-                    {item.description}
-                  </p>
-                  <div className="mt-3 flex flex-wrap gap-1.5">
-                    {item.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded bg-ink/[0.04] px-2 py-0.5 font-mono text-[11px] text-mute"
-                      >
-                        {tag}
+                  {item.href && (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs font-medium text-mute hover:text-ink transition-colors"
+                      aria-label={`View repository for ${item.title}`}
+                    >
+                      <span className="font-mono">GitHub</span>
+                      <span className="text-sm transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent">
+                        ↗
                       </span>
-                    ))}
-                  </div>
-                </>
-              );
-
-              return "href" in item && item.href ? (
-                <a
-                  key={item.title}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="ink-card group block text-inherit no-underline"
-                  style={{ transitionDelay: `${i * 80}ms` }}
-                >
-                  {cardContent}
-                </a>
-              ) : (
-                <div
-                  key={item.title}
-                  className="ink-card"
-                  style={{ transitionDelay: `${i * 80}ms` }}
-                >
-                  {cardContent}
+                    </a>
+                  )}
                 </div>
-              );
-            })}
+
+                {/* Description */}
+                <p className="mt-3 text-[14px] leading-relaxed text-mute">
+                  {item.description}
+                </p>
+
+                {/* Project Image Showcase (4:4 Square) */}
+                {item.image && (
+                  <div className="mt-4">
+                    <div className="project-img-wrapper aspect-square relative w-full overflow-hidden rounded-xl border border-ink/8 bg-wash">
+                      <Image
+                        src={item.image.src}
+                        alt={item.image.alt}
+                        width={700}
+                        height={700}
+                        unoptimized
+                        className="h-full w-full object-cover object-center"
+                      />
+                    </div>
+                    {item.image.caption && (
+                      <p className="mt-2.5 text-center text-xs italic text-mute/70">
+                        {item.image.caption}
+                      </p>
+                    )}
+                  </div>
+                )}
+
+                {/* Key Architectural Highlights */}
+                {item.highlights && item.highlights.length > 0 && (
+                  <div className="mt-4 rounded-lg bg-wash/60 p-3.5 border border-ink/5">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-mute/80">
+                      Key Highlights
+                    </p>
+                    <ul className="mt-2 space-y-1.5">
+                      {item.highlights.map((highlight, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-start gap-2 text-[13px] leading-relaxed text-mute"
+                        >
+                          <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Tags */}
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  {item.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded bg-ink/[0.04] px-2.5 py-1 font-mono text-[11px] text-mute"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 

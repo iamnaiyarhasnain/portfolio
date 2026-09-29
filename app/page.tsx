@@ -37,8 +37,8 @@ const events = [
       { src: "/resqgrid/ecr-push.jpg", alt: "Pushing the ResQGrid backend Docker image to Amazon ECR" },
       { src: "/resqgrid/venue.jpg", alt: "At the Polaris School of Technology venue" },
     ],
-    href: RESQ_REPO,
-    cta: "View ResQGrid on GitHub →",
+    href: "/projects/resqgrid",
+    cta: "See the full build log →",
   },
 ];
 
@@ -151,7 +151,7 @@ export default function Home() {
 
             {/* ResQGrid */}
             <article className="group flex flex-col">
-              <a href={RESQ_LIVE} target="_blank" rel="noopener noreferrer" className="block">
+              <Link href="/projects/resqgrid" className="block">
                 <div className="shot">
                   <div className="shot-bar"><span /><span /><span /></div>
                   <div className="relative aspect-[16/9] bg-[#f6f6f6]">
@@ -165,10 +165,10 @@ export default function Home() {
                     />
                   </div>
                 </div>
-              </a>
+              </Link>
               <div className="flex items-start justify-between gap-3 pt-4">
                 <h3 className="min-w-0 text-[16px] font-semibold leading-snug tracking-[-0.02em] text-ink">
-                  <a href={RESQ_LIVE} target="_blank" rel="noopener noreferrer">ResQGrid</a>
+                  <Link href="/projects/resqgrid">ResQGrid</Link>
                   <span className="ml-2 rounded-full border border-[#cfe3d3] bg-[#e7f3e3] px-2 py-0.5 align-middle text-[10px] font-medium text-[#2f6b3a]">
                     Live
                   </span>

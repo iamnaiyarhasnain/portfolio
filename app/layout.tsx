@@ -21,20 +21,21 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Naiyar Hasnain — Software Developer",
+  metadataBase: new URL("https://iamnaiyarhasnain.vercel.app"),
+  title: "Naiyar Hasnain — Java Full Stack Developer",
   description:
-    "Naiyar Hasnain — Exploring tech and exciting with AI. MCA at IIT Patna, building with Java, Spring, and the modern web.",
+    "Naiyar Hasnain — Java Full Stack Developer and MCA student at IIT Patna. Java, Spring Boot, Angular, Python and AI. Builder of PawBridge at Claude Build Day, Bengaluru.",
   openGraph: {
-    title: "Naiyar Hasnain — Software Developer",
+    title: "Naiyar Hasnain — Java Full Stack Developer",
     description:
-      "Software developer at IIT Patna. Java, Spring, and the web.",
+      "Java Full Stack Developer, MCA @ IIT Patna. Java, Spring Boot, Angular and AI.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Naiyar Hasnain — Software Developer",
+    title: "Naiyar Hasnain — Java Full Stack Developer",
     description:
-      "Software developer at IIT Patna. Java, Spring, and the web.",
+      "Java Full Stack Developer, MCA @ IIT Patna. Java, Spring Boot, Angular and AI.",
     creator: "@iammdmasroor",
   },
 };

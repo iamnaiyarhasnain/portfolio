@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Naiyar Hasnain — Resume</title>
+<style>
+  @page { size: A4; margin: 9mm 12mm; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #222; font-size: 9.1pt; line-height: 1.3; }
+  a { color: inherit; }
+  header { text-align: center; border-bottom: 1.6px solid #111; padding-bottom: 7px; }
+  h1 { margin: 0; font-size: 19pt; letter-spacing: 0.02em; color: #111; }
+  .role { margin-top: 3px; font-weight: 700; font-size: 10.5pt; color: #333; }
+  .contact { margin-top: 5px; font-size: 9pt; color: #555; }
+  .contact a { color: #111; font-weight: 700; text-decoration: underline; }
+  .dot { color: #aaa; margin: 0 5px; }
+  h2 { font-size: 10.6pt; letter-spacing: 0.04em; margin: 8px 0 4px; padding-bottom: 2px; border-bottom: 1px solid #ddd; color: #111; }
+  p { margin: 0; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; }
+  .sub { font-style: italic; color: #555; }
+  .edu + .edu { margin-top: 5px; }
+  table { border-collapse: collapse; width: 100%; }
+  td { vertical-align: top; padding: 1px 0; }
+  td.k { width: 30%; font-weight: 700; color: #111; }
+  .proj + .proj { margin-top: 6px; }
+  .proj-title { font-weight: 700; color: #111; font-size: 10pt; }
+  .proj-meta { font-size: 8.8pt; color: #555; margin-top: 1px; }
+  .link { display: inline-block; background: #222; color: #fff; font-size: 7.5pt; padding: 0 5px; border-radius: 3px; text-decoration: none; margin-left: 4px; }
+  ul { margin: 3px 0 0; padding-left: 14px; }
+  li { margin: 1px 0; }
+  li::marker { color: #555; }
+  b { color: #111; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>NAIYAR HASNAIN</h1>
+    <div class="role">Java Full Stack Developer</div>
+    <div class="contact">
+      naiyarhasnain77@gmail.com<span class="dot">•</span>+91 9798257187<span class="dot">•</span><a href="https://iamnaiyarhasnain.vercel.app/">Portfolio</a><span class="dot">•</span><a href="https://www.linkedin.com/in/iamnaiyarhasnain/">LinkedIn</a><span class="dot">•</span><a href="https://github.com/iamnaiyarhasnain">GitHub</a><span class="dot">•</span>Bangalore, India
+    </div>
+  </header>
+
+  <h2>OBJECTIVE</h2>
+  <p>Aspiring Java Full Stack Developer with a solid foundation in software architecture, scalable backend systems, and responsive web applications. Highly motivated to apply strong analytical capabilities and expertise in Java, Spring Boot, Angular, and SQL to engineer high-performance solutions, with a growing interest in applied AI.</p>
+
+  <h2>EDUCATION</h2>
+  <div class="edu">
+    <div class="row"><b>Indian Institute of Technology (IIT), Patna</b><b>2025 – 2027</b></div>
+    <div class="row"><span class="sub">Master of Computer Applications (MCA)</span><b>Pursuing</b></div>
+  </div>
+  <div class="edu">
+    <div class="row"><b>Maulana Azad National Urdu University (MANUU), Hyderabad</b><b>2021 – 2024</b></div>
+    <div class="row"><span class="sub">Bachelor of Science (B.Sc.) in Computer Science</span><b>CGPA: 8.82 / 10.0</b></div>
+  </div>
+
+  <h2>TECHNICAL SKILLS</h2>
+  <table>
+    <tr><td class="k">Languages:</td><td>Java (Core/Advanced), TypeScript, JavaScript, Python, SQL, C/C++</td></tr>
+    <tr><td class="k">Frontend:</td><td>HTML5, CSS3, Bootstrap, Angular, React.js, Redux Toolkit</td></tr>
+    <tr><td class="k">Backend &amp; Frameworks:</td><td>Spring Framework, Spring Boot, Spring Security (JWT), Spring Data JPA, Hibernate, REST APIs, JDBC, Spring AI (learning)</td></tr>
+    <tr><td class="k">Python &amp; Data:</td><td>NumPy, Pandas, Matplotlib</td></tr>
+    <tr><td class="k">Databases &amp; Caching:</td><td>MySQL, PostgreSQL, Redis (In-Memory Data Store), DBMS</td></tr>
+    <tr><td class="k">Core CS Concepts:</td><td>Object-Oriented Programming (OOPs), Data Structures &amp; Algorithms (DSA), Operating Systems, Computer Networks</td></tr>
+    <tr><td class="k">Dev Tools &amp; Platforms:</td><td>Docker, Git, GitHub, Maven/Gradle, IntelliJ IDEA, VS Code, Postman, OpenAPI / Swagger</td></tr>
+  </table>
+
+  <h2>PROJECTS</h2>
+  <div class="proj">
+    <div class="row"><span class="proj-title">PawBridge – Edge-AI Dog-Request Detector <a class="link" href="https://github.com/iamnaiyarhasnain/paw_bridge_poc">↗</a></span><b>Sept 2026</b></div>
+    <div class="proj-meta"><b>Hackathon:</b> Claude Build Day, Claude Creator Commons, Bengaluru (team of 4) &nbsp;·&nbsp; <b>Tech Stack:</b> ESP32-H2, Ultrasonic &amp; MPU6050 sensors, 16×2 LCD, Claude Opus + Haiku multi-agent system, live dashboard</div>
+    <ul>
+      <li><b>48-Hour IoT Build:</b> Built a device that notices when a dog <i>may</i> want something – ultrasonic trigger (&lt;30 cm), motion sensor at 10 readings/s, buzzer and LCD in a hand-cut cardboard enclosure.</li>
+      <li><b>Multi-Agent AI Pipeline:</b> An orchestrator (<b>Claude Opus</b>) sends key video frames to a vision agent and an audio spectrogram to an audio agent (<b>Claude Haiku</b>) in parallel; trigger-to-answer in <b>~17 s</b>.</li>
+      <li><b>Evidence-First, Honest AI:</b> Every result lists sensor, vision and audio evidence with a <b>confidence score</b>; code rejects any AI answer that does not start with “possible”.</li>
+      <li><b>Offline Fallback &amp; Quality:</b> Local rules give an instant action without internet so the device always responds; shipped working hardware, a live dashboard and <b>72 passing tests</b>.</li>
+    </ul>
+  </div>
+  <div class="proj">
+    <div class="row"><span class="proj-title">Sports Center – Full-Stack E-Commerce Platform <a class="link" href="https://github.com/iamnaiyarhasnain/sports-center">↗</a></span></div>
+    <div class="proj-meta"><b>Tech Stack:</b> Java 21, Spring Boot, Spring Security (JWT), React.js, TypeScript, MySQL, Redis, Docker</div>
+    <ul>
+      <li><b>Architected End-to-End E-Commerce Flow:</b> Built full lifecycle modules including <b>product cataloging</b>, <b>multi-criteria dynamic filtering</b>, search, pagination, and persistent order checkout.</li>
+      <li><b>Stateless Security &amp; Authorization:</b> Implemented token-based <b>JWT authentication</b> with role-based access control and <b>BCrypt password hashing</b> via Spring Security.</li>
+      <li><b>High-Performance Caching:</b> Integrated <b>Redis in-memory caching</b> for shopping basket state management, drastically reducing database overhead and latency.</li>
+      <li><b>Responsive Modern Frontend:</b> Engineered an interactive user interface using <b>React.js, TypeScript, Redux Toolkit</b>, and Material-UI supporting dynamic light/dark theming.</li>
+      <li><b>Data Persistence &amp; API Contracts:</b> Utilized <b>Spring Data JPA &amp; Hibernate</b> for MySQL persistence and documented REST endpoints using <b>OpenAPI / Swagger</b>.</li>
+    </ul>
+  </div>
+
+  <h2>CERTIFICATIONS</h2>
+  <ul>
+    <li><b>Programming using Java</b> – Infosys Springboard <a class="link" href="https://www.linkedin.com/feed/update/urn:li:activity:7450072377524248577/">↗</a></li>
+    <li><b>Essential Gen AI Certificate</b> – Google <a class="link" href="https://www.coursera.org/account/accomplishments/specialization/YQY66QLOLPQR">↗</a></li>
+  </ul>
+
+  <h2>STRENGTHS</h2>
+  <ul>
+    <li>Problem-Solving, Strong Logical &amp; Algorithmic Thinking, Fast Learner, Self-Motivated, Team Collaboration</li>
+  </ul>
+</body>
+</html>

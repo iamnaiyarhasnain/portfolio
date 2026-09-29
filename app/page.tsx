@@ -20,15 +20,22 @@ const events = [
     ],
     href: "/projects/pawbridge",
     cta: "See the full build log →",
+    images: [] as { src: string; alt: string }[],
   },
   {
     title: "AWS First Commit Hackathon 2026 · Team COM.SOLOSTACK",
-    place: "Bengaluru · by WeMakeDevs",
+    place: "Polaris School of Technology, Bengaluru · WeMakeDevs × AWS Bharat Builds Tour",
     date: "Sept 2026",
     points: [
       "Floods and other emergencies knock out networks exactly when people need to ask for help. We built ResQGrid around one question: how do you keep relief connected when the network fails?",
       "Residents can request help, camp workers consolidate what their camps need, and coordinators track, dispatch and update every request. Anything submitted offline is stored on the device and syncs when connectivity returns.",
-      "It was as much about learning AWS as building: Angular on Amplify, Spring Boot in a container on ECS Fargate via ECR, and MySQL on RDS. Building, debugging and deploying one step at a time until it actually ran.",
+      "It was as much about learning AWS as building: Angular on Amplify, Spring Boot in a container on ECS Fargate via ECR, and MySQL on RDS. Pushing the backend image to ECR from the hackathon floor was the moment it started to feel real. Building, debugging and deploying one step at a time until it actually ran.",
+    ],
+    images: [
+      { src: "/resqgrid/banner.jpg", alt: "At the Bharat Builds Tour banner by WeMakeDevs and AWS" },
+      { src: "/resqgrid/at-work.jpg", alt: "Building at the hackathon hall" },
+      { src: "/resqgrid/ecr-push.jpg", alt: "Pushing the ResQGrid backend Docker image to Amazon ECR" },
+      { src: "/resqgrid/venue.jpg", alt: "At the Polaris School of Technology venue" },
     ],
     href: RESQ_REPO,
     cta: "View ResQGrid on GitHub →",
@@ -262,6 +269,15 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
+              {e.images.length > 0 && (
+                <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                  {e.images.map((img) => (
+                    <div key={img.src} className="relative aspect-[3/4] overflow-hidden rounded-lg border border-line bg-[#f6f6f6]">
+                      <Image src={img.src} alt={img.alt} fill sizes="(max-width: 640px) 50vw, 160px" unoptimized className="object-cover" />
+                    </div>
+                  ))}
+                </div>
+              )}
               {e.href.startsWith("/") ? (
                 <Link href={e.href} className="link-u mt-3 inline-block text-[13px]">
                   {e.cta}

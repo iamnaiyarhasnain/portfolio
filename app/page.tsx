@@ -33,9 +33,6 @@ const events = [
     ],
     images: [
       { src: "/resqgrid/banner.jpg", alt: "At the Bharat Builds Tour banner by WeMakeDevs and AWS" },
-      { src: "/resqgrid/at-work.jpg", alt: "Building at the hackathon hall" },
-      { src: "/resqgrid/ecr-push.jpg", alt: "Pushing the ResQGrid backend Docker image to Amazon ECR" },
-      { src: "/resqgrid/venue.jpg", alt: "At the Polaris School of Technology venue" },
     ],
     href: "/projects/resqgrid",
     cta: "See the full build log →",
@@ -270,9 +267,9 @@ export default function Home() {
                 ))}
               </ul>
               {e.images.length > 0 && (
-                <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                <div className="mt-4 grid max-w-[260px] grid-cols-1 gap-2">
                   {e.images.map((img) => (
-                    <div key={img.src} className="relative aspect-[3/4] overflow-hidden rounded-lg border border-line bg-[#f6f6f6]">
+                    <div key={img.src} className="relative aspect-[4/5] overflow-hidden rounded-lg border border-line bg-[#f6f6f6]">
                       <Image src={img.src} alt={img.alt} fill sizes="(max-width: 640px) 50vw, 160px" unoptimized className="object-cover" />
                     </div>
                   ))}

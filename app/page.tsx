@@ -19,6 +19,19 @@ const events = [
       "We didn't win. We did ship a working device and learned more in two days than in most months.",
     ],
     href: "/projects/pawbridge",
+    cta: "See the full build log →",
+  },
+  {
+    title: "AWS First Commit Hackathon 2026 · Team COM.SOLOSTACK",
+    place: "Bengaluru · by WeMakeDevs",
+    date: "Sept 2026",
+    points: [
+      "Floods and other emergencies knock out networks exactly when people need to ask for help. We built ResQGrid around one question: how do you keep relief connected when the network fails?",
+      "Residents can request help, camp workers consolidate what their camps need, and coordinators track, dispatch and update every request. Anything submitted offline is stored on the device and syncs when connectivity returns.",
+      "It was as much about learning AWS as building: Angular on Amplify, Spring Boot in a container on ECS Fargate via ECR, and MySQL on RDS. Building, debugging and deploying one step at a time until it actually ran.",
+    ],
+    href: RESQ_REPO,
+    cta: "View ResQGrid on GitHub →",
   },
 ];
 
@@ -163,8 +176,8 @@ export default function Home() {
                 </div>
               </div>
               <p className="mt-1.5 text-[14px] leading-relaxed text-mute">
-                Offline-first disaster relief coordination for residents, relief camps and
-                coordinators. SOS requests are saved on the device when the network drops and
+                Built at the AWS First Commit Hackathon in Bengaluru: offline-first disaster
+                relief coordination for residents, relief camps and coordinators. SOS requests are saved on the device when the network drops and
                 sync automatically when it&apos;s back; coordinators move them from Pending →
                 Accepted → Dispatched → Delivered.
               </p>
@@ -249,9 +262,15 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <Link href={e.href} className="link-u mt-3 inline-block text-[13px]">
-                See the full build log →
-              </Link>
+              {e.href.startsWith("/") ? (
+                <Link href={e.href} className="link-u mt-3 inline-block text-[13px]">
+                  {e.cta}
+                </Link>
+              ) : (
+                <a href={e.href} target="_blank" rel="noopener noreferrer" className="link-u mt-3 inline-block text-[13px]">
+                  {e.cta}
+                </a>
+              )}
             </article>
           ))}
         </section>

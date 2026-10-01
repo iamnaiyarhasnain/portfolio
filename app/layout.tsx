@@ -21,7 +21,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://iamnaiyarhasnain.vercel.app"),
+  metadataBase: new URL("https://inaiyarhasnain.vercel.app"),
   title: "Naiyar Hasnain — Java Full Stack Developer",
   description:
     "Naiyar Hasnain — Java Full Stack Developer and MCA student at IIT Patna. Java, Spring Boot, Angular, Python and AI. Builder of PawBridge at Claude Build Day, Bengaluru.",

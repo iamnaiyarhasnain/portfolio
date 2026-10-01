@@ -6,7 +6,7 @@ import { ArrowUpRight, GitHubIcon } from "./components/socials";
 /* ── Data ──────────────────────────────────────────────────── */
 
 const RESQ_LIVE = "https://main.d1vtxuu4ic8mpk.amplifyapp.com";
-const RESQ_REPO = "https://github.com/iamnaiyarhasnain/ResQGrid";
+const RESQ_REPO = "https://github.com/inaiyarhasnain/ResQGrid";
 
 const events = [
   {
@@ -123,7 +123,7 @@ export default function Home() {
                   </span>
                 </h3>
                 <a
-                  href="https://github.com/iamnaiyarhasnain/paw_bridge_poc"
+                  href="https://github.com/inaiyarhasnain/paw_bridge_poc"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="PawBridge on GitHub"
@@ -197,7 +197,7 @@ export default function Home() {
             {/* Sports Center */}
             <article className="group flex flex-col">
               <a
-                href="https://github.com/iamnaiyarhasnain/sports-center"
+                href="https://github.com/inaiyarhasnain/sports-center"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"
@@ -223,12 +223,12 @@ export default function Home() {
               </a>
               <div className="flex items-start justify-between gap-3 pt-4">
                 <h3 className="min-w-0 text-[16px] font-semibold leading-snug tracking-[-0.02em] text-ink">
-                  <a href="https://github.com/iamnaiyarhasnain/sports-center" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/inaiyarhasnain/sports-center" target="_blank" rel="noopener noreferrer">
                     Sports Center
                   </a>
                 </h3>
                 <a
-                  href="https://github.com/iamnaiyarhasnain/sports-center"
+                  href="https://github.com/inaiyarhasnain/sports-center"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Sports Center on GitHub"

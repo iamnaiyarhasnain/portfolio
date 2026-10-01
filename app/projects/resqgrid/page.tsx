@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const LIVE = "https://main.d1vtxuu4ic8mpk.amplifyapp.com";
-const REPO = "https://github.com/iamnaiyarhasnain/ResQGrid";
+const REPO = "https://github.com/inaiyarhasnain/ResQGrid";
 const POST = "https://lnkd.in/p/d-NEqNTJ";
 
 const roles = [

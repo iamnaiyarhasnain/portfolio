@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "A dog-request detector in a cardboard box, built in 48 hours at Claude Build Day, Bengaluru. ESP32 sensors, local rules and a Claude multi-agent system.",
 };
 
-const REPO = "https://github.com/iamnaiyarhasnain/paw_bridge_poc";
+const REPO = "https://github.com/inaiyarhasnain/paw_bridge_poc";
 const POST =
   "https://www.linkedin.com/posts/venket-raj-s_claudebuildday-claudecreatorcommons-buildwithclaude-ugcPost-7510392259092062209-2zEK/";
 

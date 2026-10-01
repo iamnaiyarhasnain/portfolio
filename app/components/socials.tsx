@@ -1,9 +1,9 @@
 export const EMAIL = "naiyarhasnain77@gmail.com";
-export const GITHUB_HANDLE = "iamnaiyarhasnain";
+export const GITHUB_HANDLE = "inaiyarhasnain";
 
 export const socials = [
   {
-    href: "https://x.com/iammdmasroor",
+    href: "https://x.com/inaiyarhasnain",
     label: "X (Twitter)",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor">
@@ -17,7 +17,7 @@ export const socials = [
     icon: <GitHubIcon />,
   },
   {
-    href: "https://www.linkedin.com/in/iamnaiyarhasnain/",
+    href: "https://www.linkedin.com/in/inaiyarhasnain/",
     label: "LinkedIn",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor">
@@ -35,7 +35,7 @@ export const socials = [
     ),
   },
   {
-    href: "https://leetcode.com/u/iamnaiyarhasnain/",
+    href: "https://leetcode.com/u/inaiyarhasnain/",
     label: "LeetCode",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor">

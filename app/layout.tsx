@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Naiyar Hasnain — Java Full Stack Developer",
     description:
       "Java Full Stack Developer, MCA @ IIT Patna. Java, Spring Boot, Angular and AI.",
-    creator: "@iammdmasroor",
+    creator: "@inaiyarhasnain",
   },
 };
 

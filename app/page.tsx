@@ -5,7 +5,6 @@ import { ArrowUpRight, GitHubIcon } from "./components/socials";
 
 /* ── Data ──────────────────────────────────────────────────── */
 
-const RESQ_LIVE = "https://main.d1vtxuu4ic8mpk.amplifyapp.com";
 const RESQ_REPO = "https://github.com/inaiyarhasnain/ResQGrid";
 
 const events = [
@@ -166,18 +165,19 @@ export default function Home() {
               <div className="flex items-start justify-between gap-3 pt-4">
                 <h3 className="min-w-0 text-[16px] font-semibold leading-snug tracking-[-0.02em] text-ink">
                   <Link href="/projects/resqgrid">ResQGrid</Link>
-                  <span className="ml-2 rounded-full border border-[#cfe3d3] bg-[#e7f3e3] px-2 py-0.5 align-middle text-[10px] font-medium text-[#2f6b3a]">
-                    Live
+                  <span className="ml-2 rounded-full border border-accent/50 bg-accent/10 px-2 py-0.5 align-middle text-[10px] font-medium text-[#7a5c38]">
+                    Hackathon · Team
                   </span>
                 </h3>
-                <div className="flex flex-none items-center gap-2.5 pt-0.5 text-[#bbb] [&_svg]:h-4 [&_svg]:w-4">
-                  <a href={RESQ_LIVE} target="_blank" rel="noopener noreferrer" aria-label="ResQGrid live app" className="transition-colors hover:text-ink">
-                    <ArrowUpRight />
-                  </a>
-                  <a href={RESQ_REPO} target="_blank" rel="noopener noreferrer" aria-label="ResQGrid on GitHub" className="transition-colors hover:text-ink">
-                    <GitHubIcon />
-                  </a>
-                </div>
+                <a
+                  href={RESQ_REPO}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="ResQGrid on GitHub"
+                  className="flex-none pt-0.5 text-[#bbb] transition-colors hover:text-ink [&>svg]:h-4 [&>svg]:w-4"
+                >
+                  <GitHubIcon />
+                </a>
               </div>
               <p className="mt-1.5 text-[14px] leading-relaxed text-mute">
                 Built at the AWS First Commit Hackathon in Bengaluru: offline-first disaster

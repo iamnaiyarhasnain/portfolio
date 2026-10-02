@@ -10,7 +10,6 @@ export const metadata: Metadata = {
     "An offline-first disaster relief coordination grid, built at the AWS First Commit Hackathon 2026 in Bengaluru. Angular, Spring Boot, MySQL and AWS.",
 };
 
-const LIVE = "https://main.d1vtxuu4ic8mpk.amplifyapp.com";
 const REPO = "https://github.com/inaiyarhasnain/ResQGrid";
 const POST = "https://lnkd.in/p/d-NEqNTJ";
 
@@ -70,11 +69,7 @@ export default function ResQGrid() {
             anyway. Offline requests wait on the device and sync the moment connectivity returns.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
-            <a href={LIVE} target="_blank" rel="noopener noreferrer" className="btn-primary !w-auto">
-              <ArrowUpRight />
-              Live app
-            </a>
-            <a href={REPO} target="_blank" rel="noopener noreferrer" className="btn-secondary !w-auto">
+            <a href={REPO} target="_blank" rel="noopener noreferrer" className="btn-primary !w-auto">
               <GitHubIcon />
               View on GitHub
             </a>
